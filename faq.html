@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Häufige Fragen zum Engineering AI Hub | Braingineering</title>
+<meta name="description" content="Antworten auf 31 Fragen zu Daten, Hosting, Datenschutz, Technologie, Microsoft 365-Integration und Unterschieden zu ChatGPT und Copilot. Für Ingenieurbüros in Österreich und Deutschland.">
+<meta property="og:title" content="FAQ — Engineering AI Hub | Braingineering">
+<meta property="og:description" content="31 Fragen und Antworten zu Datenschutz, Technologie, Integration und Betrieb des Engineering AI Hub.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.braingineering.at/faq">
+<link rel="canonical" href="https://www.braingineering.at/faq">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Wo laufen die Daten?","acceptedAnswer":{"@type":"Answer","text":"Im Standard (SaaS) auf Hetzner-Servern in Deutschland — Rechenzentren in Nürnberg und Falkenstein, ISO 27001 zertifiziert. Alternativ auf Ihren eigenen Servern (On-Premise) oder in Ihrem Cloud-Tenant (Azure, AWS) in einer EU-Region. Etwa 90% unserer Kunden nutzen die SaaS-Variante."}},
+    {"@type":"Question","name":"Wer hat Zugriff auf meine Daten?","acceptedAnswer":{"@type":"Answer","text":"Sie und Ihr Team. Jeder Kunde bekommt einen eigenen, isolierten Tenant. Kein anderer Kunde und kein Braingineering-Mitarbeiter hat ohne Ihre explizite Zustimmung Zugriff auf Ihre Projektdaten. Die Trennung ist technisch erzwungen, nicht nur organisatorisch."}},
+    {"@type":"Question","name":"Werden meine Daten zum Training verwendet?","acceptedAnswer":{"@type":"Answer","text":"Nein. Nie. Das ist vertraglich garantiert. Wir nutzen die KI-Modelle (GPT-4o, Claude) über API-Zugang — bei API-Nutzung werden Eingaben weder gespeichert noch zum Training verwendet. Das gilt für alle drei Hosting-Optionen."}},
+    {"@type":"Question","name":"Kann ein anderer Kunde meine Daten sehen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Strikte Mandantentrennung sorgt dafür, dass jeder Kunde nur seine eigenen Daten sieht. Das gilt für Dokumente, E-Mails, Vektoren und Chat-Verläufe. Technisch unmöglich, nicht nur durch Richtlinien geregelt."}},
+    {"@type":"Question","name":"Was passiert mit meinen Daten, wenn ich kündige?","acceptedAnswer":{"@type":"Answer","text":"Bei SaaS: vollständige Löschung von unseren Servern, auf Wunsch mit vorherigem Datenexport. Löschung wird schriftlich bestätigt. Bei On-Premise und Kunden-Cloud: Die Daten lagen nie bei uns — Sie deinstallieren die Software, fertig."}},
+    {"@type":"Question","name":"Wo genau stehen die Server?","acceptedAnswer":{"@type":"Answer","text":"SaaS: Hetzner-Rechenzentren in Nürnberg und Falkenstein, Deutschland. Deutsches Unternehmen, ISO 27001, 100% Ökostrom. On-Premise: Ihre eigenen Räumlichkeiten. Kunden-Cloud: EU-Regionen bei Azure (z.B. West Europe / Germany West Central) oder AWS (Frankfurt, Ireland)."}},
+    {"@type":"Question","name":"Sind Backups mit dabei?","acceptedAnswer":{"@type":"Answer","text":"Bei SaaS kümmern wir uns um regelmäßige Backups nach branchenüblichen Standards. Details besprechen wir im Security-Review. Bei On-Premise und Kunden-Cloud liegt die Backup-Verantwortung bei Ihnen — wir beraten Sie aber bei der Einrichtung."}},
+    {"@type":"Question","name":"Ist der Engineering AI Hub wirklich DSGVO-konform?","acceptedAnswer":{"@type":"Answer","text":"Ja. Datenspeicherung und Verarbeitung (Inference) finden innerhalb der EU statt. Kein Transfer in Drittländer. Kein Training mit Kundendaten. Auftragsverarbeitungsvertrag (AVV) ist Teil des Vertrags. Braingineering ist ein österreichisches Unternehmen (FN 661950g, Sitz Wien)."}},
+    {"@type":"Question","name":"Was ist mit dem Cloud Act?","acceptedAnswer":{"@type":"Answer","text":"Der US CLOUD Act erlaubt US-Behörden theoretisch Zugriff auf Daten bei US-Unternehmen — auch wenn die Server in der EU stehen. Das betrifft OpenAI, Microsoft und andere US-Anbieter. Wir nutzen deren Modelle über API, speichern aber keine Kundendaten bei diesen Anbietern. Ihre Projektdaten liegen auf Hetzner (deutsch) oder Ihren eigenen Servern."}},
+    {"@type":"Question","name":"Brauche ich einen Auftragsverarbeitungsvertrag?","acceptedAnswer":{"@type":"Answer","text":"Ja, wenn personenbezogene Daten verarbeitet werden — und das ist bei Projektdaten mit Kundennamen, Adressen oder Kontaktdaten fast immer der Fall. Wir stellen einen AVV im Rahmen des Vertrags bereit."}},
+    {"@type":"Question","name":"Was ist mit dem EU AI Act — betrifft mich das?","acceptedAnswer":{"@type":"Answer","text":"Artikel 4 des EU AI Act schreibt eine organisatorische Schulungspflicht für KI-nutzende Unternehmen vor. In Kraft seit Februar 2025, Enforcement ab August 2026. Das betrifft jedes Unternehmen, das KI-Systeme einsetzt. Braingineering bietet dafür einen separaten KI-Literacy-Workshop an."}},
+    {"@type":"Question","name":"Ist Braingineering ein österreichisches Unternehmen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Braingineering GmbH, FN 661950g, Sitz: Modecenterstraße 20/1/193, 1030 Wien. Kein US-Mutterkonzern, keine ausländische Beteiligung. Gegründet und betrieben in Österreich."}},
+    {"@type":"Question","name":"Wie findet die KI die richtige Stelle in meinen Dokumenten?","acceptedAnswer":{"@type":"Answer","text":"Über semantische Suche. Ihre Dokumente werden in sogenannte Vektoren umgewandelt — Zahlenreihen, die die Bedeutung eines Textes beschreiben. Wenn Sie eine Frage stellen, wird diese ebenfalls in einen Vektor umgewandelt. Das System findet dann die Textabschnitte, deren Bedeutung Ihrer Frage am nächsten kommt. Details auf unserer Technologie-Seite."}},
+    {"@type":"Question","name":"Was ist RAG?","acceptedAnswer":{"@type":"Answer","text":"RAG steht für Retrieval Augmented Generation. Die KI sucht zuerst die relevantesten Stellen in Ihren Daten (Retrieval), dann generiert sie daraus eine Antwort (Generation). So antwortet das System nur auf Basis Ihrer Dokumente — nicht auf Basis von Internetwissen. Das reduziert Halluzinationen erheblich."}},
+    {"@type":"Question","name":"Welche KI-Modelle werden verwendet?","acceptedAnswer":{"@type":"Answer","text":"Aktuell GPT-4o (OpenAI) und Claude (Anthropic). Wir setzen pro Aufgabe das am besten geeignete Modell ein und aktualisieren, wenn bessere Modelle verfügbar werden. Alle Modelle laufen über API auf EU-Servern."}},
+    {"@type":"Question","name":"Warum halluziniert das System weniger als ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT antwortet aus seinem Trainingskorpus — dem gesamten Internet. Der Engineering AI Hub antwortet nur aus Ihren Daten. Durch RAG bekommt das Modell die relevanten Originalstellen mitgeliefert und generiert seine Antwort daraus. Jede Aussage enthält einen Quellenverweis: Dokument, Seite, Abschnitt."}},
+    {"@type":"Question","name":"Funktioniert das auch mit gescannten PDFs?","acceptedAnswer":{"@type":"Answer","text":"Ja, mit Einschränkungen. Gescannte PDFs durchlaufen zuerst eine OCR-Erkennung (Texterkennung). Die Qualität hängt von der Scan-Auflösung und der Lesbarkeit ab. Saubere 300-dpi-Scans funktionieren gut. Handschriftliche Notizen oder schlechte Kopien haben eine höhere Fehlerquote."}},
+    {"@type":"Question","name":"Wie lange dauert die Erst-Indexierung?","acceptedAnswer":{"@type":"Answer","text":"Das hängt vom Datenvolumen ab. Ein typisches Ingenieurbüro mit 5.000–10.000 Dokumenten ist in wenigen Stunden durchindexiert. Neue Dokumente werden danach laufend nachindexiert. Die Indexierung läuft im Hintergrund und stört Ihren Arbeitsalltag nicht."}},
+    {"@type":"Question","name":"Funktioniert das mit meinem Microsoft 365?","acceptedAnswer":{"@type":"Answer","text":"Ja. Der Hub greift auf SharePoint (Projektdaten), OneDrive, Outlook/Exchange (E-Mails) und optional Teams zu. Der Hub läuft nicht innerhalb von Microsoft 365, sondern verbindet sich darüber. Ihre Ordnerstruktur bleibt unverändert. Details auf unserer M365-Integrationsseite."}},
+    {"@type":"Question","name":"Ich habe keinen eigenen Server — geht das trotzdem?","acceptedAnswer":{"@type":"Answer","text":"Ja. Die SaaS-Variante (Option A) braucht keinen eigenen Server. Der Hub läuft auf unserer Infrastruktur bei Hetzner in Deutschland. Sie greifen über den Browser zu. Das ist die Option, die etwa 90% unserer Kunden nutzen."}},
+    {"@type":"Question","name":"Muss ich meine Ordner umstrukturieren?","acceptedAnswer":{"@type":"Answer","text":"Nein. Der Hub legt eine Indexierung über Ihre bestehenden Datenquellen. SharePoint-Bibliotheken, Ordnerstrukturen, Outlook-Postfächer — alles bleibt wie es ist. Die Originaldaten werden nicht verändert, verschoben oder kopiert."}},
+    {"@type":"Question","name":"Was muss meine IT vorbereiten?","acceptedAnswer":{"@type":"Answer","text":"Bei SaaS: wenig. Wir brauchen Lesezugriff auf die relevanten SharePoint-Bibliotheken und Outlook-Postfächer. Bei On-Premise: Ihre IT stellt einen Server bereit und gewährt Netzwerkzugang. Einen Installations-Leitfaden liefern wir mit."}},
+    {"@type":"Question","name":"Wie lange dauert das Setup?","acceptedAnswer":{"@type":"Answer","text":"SaaS: wenige Wochen vom Vertragsstart bis zum Go-Live, je nach Datenvolumen und Konfiguration. On-Premise: zusätzlich 1–2 Wochen für Serverbereitstellung und Installation. Die reine technische Einrichtung dauert typischerweise 2–3 Tage."}},
+    {"@type":"Question","name":"Was ist der Unterschied zu ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT ist ein generischer Chatbot ohne Zugriff auf Ihre Firmendaten. Der Engineering AI Hub durchsucht Ihre eigenen Dokumente, E-Mails und Normen — und liefert Antworten mit Quellenverweisen. Dazu: EU-Server, DSGVO-konform, kein Training mit Ihren Daten. ChatGPT in der Standardversion bietet nichts davon."}},
+    {"@type":"Question","name":"Macht Microsoft Copilot das nicht bald auch?","acceptedAnswer":{"@type":"Answer","text":"Copilot ist DSGVO-konform und in M365 integriert — das ist ein Vorteil. Aber Copilot arbeitet innerhalb einzelner Apps (Word, Outlook, Teams). Er durchsucht nicht Ihr gesamtes Projektarchiv nach Referenzprojekten, kennt keine ÖNORMEN mit Quellenverweisen, erstellt keine Protokolle per Anruf und prüft keine Leistungsverzeichnisse. Der Hub orchestriert Daten über Silos hinweg."}},
+    {"@type":"Question","name":"Wie unterscheidet sich der Hub von einem eigenen GPT?","acceptedAnswer":{"@type":"Answer","text":"Ein Custom GPT bei OpenAI arbeitet mit begrenztem Kontext (maximal ~20 Dateien), läuft auf US-Servern, bietet keine Mandantentrennung und keine Quellenverweise auf Abschnittsebene. Der Hub indexiert Tausende Dokumente, läuft in der EU und liefert exakte Verweise: Dokument, Seite, Absatz."}},
+    {"@type":"Question","name":"Warum nicht einfach Perplexity oder Gemini?","acceptedAnswer":{"@type":"Answer","text":"Beide durchsuchen das Internet, nicht Ihre Firmendaten. Perplexity speichert Prompts ohne belastbare Datenschutz-Dokumentation. Google Gemini in der Konsumenten-Version loggt Interaktionen bis zu 72 Stunden. Keines der beiden Tools ist für den Einsatz mit vertraulichen Projektdaten geeignet."}},
+    {"@type":"Question","name":"Wie werden meine Mitarbeiter geschult?","acceptedAnswer":{"@type":"Answer","text":"Die Einarbeitung dauert 1–2 Stunden pro Person. Der Hub ist browserbasiert und funktioniert wie ein Chat — keine neue Software, keine neuen Dateiformate. Wir führen ein Onboarding durch und stellen Anleitungen bereit. Die meisten Mitarbeiter arbeiten nach einer Woche selbstständig."}},
+    {"@type":"Question","name":"Was passiert bei einem Ausfall?","acceptedAnswer":{"@type":"Answer","text":"Bei SaaS überwachen wir die Systeme und reagieren auf Ausfälle. Ihre Originaldaten (SharePoint, Outlook) sind davon nie betroffen — der Hub ist ein zusätzliches Werkzeug, kein Ersatz für Ihre bestehende Infrastruktur. Bei On-Premise liegt die Verfügbarkeit bei Ihrer IT."}},
+    {"@type":"Question","name":"Wie wird das System aktualisiert?","acceptedAnswer":{"@type":"Answer","text":"Bei SaaS spielen wir Updates automatisch ein — neue Modelle, Verbesserungen, Sicherheitspatches. Sie merken davon im Arbeitsalltag nichts. Bei On-Premise stimmen wir Update-Zyklen mit Ihnen ab. Keine Updates ohne Ihre Freigabe."}},
+    {"@type":"Question","name":"Was, wenn OpenAI ein neues Modell bringt — seid ihr dann obsolet?","acceptedAnswer":{"@type":"Answer","text":"Im Gegenteil. Wir integrieren neue Modelle, sobald sie einen Mehrwert bieten. Der Wechsel von GPT-4 auf GPT-4o lief für unsere Kunden im Hintergrund. Der Hub ist modellunabhängig aufgebaut — wir nutzen aktuell GPT-4o und Claude parallel. Wenn morgen ein besseres Modell erscheint, profitieren Sie davon automatisch."}}
+  ]
+}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--navy:#122D6E;--orange:#FF5100;--white:#FFFFFF;--light:#F0F2F7;--surface:#F0F2F8;--gray:#4A5B7A;--muted:rgba(18,45,110,0.7);--dark:#0A1A3E;--green:#0F6E56;--green-light:#E1F5EE;--blue-grad:linear-gradient(135deg,#122D6E 0%,#1a3fa0 50%,#2255d4 100%);--orange-grad:linear-gradient(135deg,#FF5100 0%,#e03d00 100%)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Manrope',sans-serif;color:var(--navy);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid rgba(18,45,110,0.08);padding:14px 0}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-badge{width:30px;height:30px;background:var(--orange);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-text{font-size:18px;font-weight:800;color:var(--navy)}
+.nav-links{display:flex;align-items:center;gap:8px}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;padding:6px 12px;border-radius:6px;transition:color 0.2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-links a.active{color:var(--navy);font-weight:700;background:var(--surface)}
+
+/* HERO — compact */
+.hero{background:var(--blue-grad);padding:64px 24px 56px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-120px;right:-120px;width:340px;height:340px;background:var(--orange-grad);border-radius:50%;opacity:0.1;pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:280px;height:280px;background:var(--orange-grad);border-radius:50%;opacity:0.07;pointer-events:none}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+.eyebrow{display:inline-block;color:var(--white);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;opacity:0.7}
+.hero h1{color:var(--white);font-size:40px;font-weight:800;line-height:1.15;margin-bottom:14px}
+.hero-lead{color:rgba(255,255,255,0.8);font-size:17px;max-width:600px;line-height:1.65}
+
+/* JUMP NAV */
+.jump-nav{background:var(--surface);padding:16px 24px;border-bottom:1px solid rgba(18,45,110,0.06)}
+.jump-inner{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px}
+.jump-inner a{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;padding:6px 14px;border-radius:6px;border:1px solid rgba(18,45,110,0.1);transition:all 0.2s;white-space:nowrap}
+.jump-inner a:hover{color:var(--navy);border-color:var(--navy);background:var(--white)}
+
+/* SECTIONS */
+.content{padding:64px 24px}
+.content.light{background:var(--white)}
+.content.surface{background:var(--surface)}
+.section-inner{max-width:900px;margin:0 auto}
+.section-num{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
+.section-title{font-size:28px;font-weight:800;color:var(--navy);margin-bottom:10px;line-height:1.2}
+.divider{height:4px;width:60px;background:var(--orange);border-radius:2px;margin:16px 0 28px}
+
+/* ACCORDION */
+.faq-list{display:flex;flex-direction:column;gap:8px}
+details.faq-item{background:var(--white);border-radius:10px;border:1px solid rgba(18,45,110,0.08);overflow:hidden;transition:box-shadow 0.2s}
+.content.surface details.faq-item{background:var(--white)}
+.content.light details.faq-item{background:var(--surface)}
+details.faq-item[open]{box-shadow:0 2px 12px rgba(18,45,110,0.08)}
+details.faq-item summary{padding:18px 24px;font-size:15px;font-weight:700;color:var(--navy);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;line-height:1.4;-webkit-user-select:none;user-select:none}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary::marker{display:none}
+details.faq-item summary .chevron{flex-shrink:0;width:20px;height:20px;transition:transform 0.25s ease;color:var(--orange)}
+details.faq-item[open] summary .chevron{transform:rotate(180deg)}
+details.faq-item .faq-answer{padding:0 24px 20px;font-size:15px;color:var(--gray);line-height:1.75}
+details.faq-item .faq-answer a{color:var(--orange);text-decoration:none}
+details.faq-item .faq-answer a:hover{text-decoration:underline}
+
+/* CROSS-LINKS */
+.link-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:28px 0}
+.link-card{background:var(--white);border-radius:12px;padding:28px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;display:block;box-shadow:0 2px 16px rgba(18,45,110,0.08)}
+.link-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(18,45,110,0.12)}
+.link-card .link-icon{width:40px;height:40px;background:rgba(18,45,110,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:18px;color:var(--orange)}
+.link-card h4{font-size:15px;color:var(--navy);margin-bottom:6px}
+.link-card p{font-size:13px;color:var(--gray);line-height:1.5}
+
+/* CTA BANNER */
+.cta-banner{background:var(--blue-grad);padding:64px 24px;text-align:center;position:relative;overflow:hidden}
+.cta-banner::before{content:'';position:absolute;bottom:-80px;left:-80px;width:250px;height:250px;background:var(--orange-grad);border-radius:50%;opacity:0.1;pointer-events:none}
+.cta-banner::after{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:var(--orange-grad);border-radius:50%;opacity:0.08;pointer-events:none}
+.cta-banner h2{color:var(--white);font-size:28px;font-weight:800;margin-bottom:12px;position:relative;z-index:1}
+.cta-banner p{color:rgba(255,255,255,0.8);font-size:16px;margin-bottom:26px;position:relative;z-index:1;max-width:550px;margin-left:auto;margin-right:auto}
+
+/* ARTICLE META */
+.article-meta{max-width:900px;margin:0 auto;padding:32px 24px;font-size:13px;color:var(--gray);border-top:1px solid #E5E7EB}
+.article-meta span{margin-right:24px}
+
+/* FOOTER */
+.site-footer{background:var(--surface);padding:48px 24px 24px;border-top:1px solid rgba(18,45,110,0.06)}
+.footer-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+.footer-brand .footer-logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:12px}
+.footer-brand p{font-size:13px;color:var(--gray);line-height:1.6;max-width:280px}
+.footer-col h5{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:12px;text-transform:uppercase;letter-spacing:1px}
+.footer-col a{display:block;font-size:14px;color:var(--gray);text-decoration:none;padding:4px 0;transition:color 0.2s}
+.footer-col a:hover{color:var(--navy)}
+.footer-bottom{max-width:900px;margin:24px auto 0;padding-top:20px;border-top:1px solid rgba(18,45,110,0.08);font-size:12px;color:var(--gray)}
+
+/* RESPONSIVE */
+@media(max-width:820px){
+  .nav-links{display:none}
+  .hero{padding:48px 24px 40px}
+  .hero h1{font-size:28px}
+  .section-title{font-size:22px}
+  .content{padding:48px 24px}
+  .link-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr;gap:24px}
+  .cta-banner{padding:48px 24px}
+  .cta-banner h2{font-size:24px}
+  .jump-inner{gap:6px}
+  .jump-inner a{font-size:12px;padding:5px 10px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="https://www.braingineering.at" class="logo">
+      <div class="logo-badge">
+        <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.5 1L1 10.5H7L5.5 17L13 7.5H7L8.5 1Z" fill="white" stroke="white" stroke-width="0.5" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="logo-text">braingineering.</span>
+    </a>
+    <div class="nav-links">
+      <a href="/technologie">Technologie</a>
+      <a href="/datenschutz">Datenschutz</a>
+      <a href="/sicherheit">Sicherheit</a>
+      <a href="/microsoft-365-integration">M365-Integration</a>
+      <a href="/faq" class="active">FAQ</a>
+      <a href="https://www.braingineering.at/kostenloser-ki-kurzcheck-fur-ingenieurburos" style="background:#FF5100;color:#FFFFFF;border:none;border-radius:8px;padding:8px 16px;font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;">KI-Kurzcheck</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO (compact) -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">FAQ</div>
+    <h1>Häufige Fragen zum<br>Engineering AI Hub</h1>
+    <p class="hero-lead">31 Antworten zu Daten, Datenschutz, Technologie, Integration und dem Unterschied zu ChatGPT und Copilot.</p>
+  </div>
+</header>
+
+<!-- JUMP NAV -->
+<div class="jump-nav">
+  <div class="jump-inner">
+    <a href="#daten-hosting">Daten und Hosting</a>
+    <a href="#datenschutz-recht">Datenschutz und Recht</a>
+    <a href="#technologie">Technologie</a>
+    <a href="#integration-it">Integration und IT</a>
+    <a href="#unterschiede">Unterschiede zu anderen Tools</a>
+    <a href="#betrieb">Betrieb und Support</a>
+  </div>
+</div>
+
+<!-- ABSCHNITT 01: DATEN UND HOSTING -->
+<section class="content light" id="daten-hosting">
+  <div class="section-inner">
+    <div class="section-num">Abschnitt 01</div>
+    <h2 class="section-title">Daten und Hosting</h2>
+    <div class="divider"></div>
+
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>Wo laufen die Daten? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Im Standard (SaaS) auf Hetzner-Servern in Deutschland. Rechenzentren in Nürnberg und Falkenstein, ISO 27001 zertifiziert. Alternativ auf Ihren eigenen Servern (On-Premise) oder in Ihrem Cloud-Tenant (Azure, AWS) in einer EU-Region. Etwa 90% unserer Kunden nutzen die SaaS-Variante. Mehr dazu auf der <a href="/datenschutz">Datenschutz-Seite</a>.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Wer hat Zugriff auf meine Daten? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Sie und Ihr Team. Jeder Kunde bekommt einen eigenen, isolierten Tenant. Kein anderer Kunde und kein Braingineering-Mitarbeiter hat ohne Ihre explizite Zustimmung Zugriff auf Ihre Projektdaten. Die Trennung ist technisch erzwungen, nicht nur organisatorisch.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Werden meine Daten zum Training verwendet? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Nein. Nie. Vertraglich garantiert. Wir nutzen die KI-Modelle (GPT-4o, Claude) über API-Zugang. Bei API-Nutzung werden Eingaben weder gespeichert noch zum Training verwendet. Das gilt für alle drei Hosting-Optionen.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Kann ein anderer Kunde meine Daten sehen? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Nein. Strikte Mandantentrennung sorgt dafür, dass jeder Kunde nur seine eigenen Daten sieht. Das gilt für Dokumente, E-Mails, Vektoren und Chat-Verläufe. Technisch unmöglich, nicht nur durch Richtlinien geregelt. Details auf der <a href="/sicherheit">Sicherheits-Seite</a>.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Was passiert mit meinen Daten, wenn ich kündige? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Bei SaaS: vollständige Löschung von unseren Servern, auf Wunsch mit vorherigem Datenexport. Löschung wird schriftlich bestätigt. Bei On-Premise und Kunden-Cloud: Die Daten lagen nie bei uns. Sie deinstallieren die Software, fertig.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Wo genau stehen die Server? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">SaaS: <a href="https://www.hetzner.com/de/unternehmen/rechenzentrum" target="_blank">Hetzner-Rechenzentren</a> in Nürnberg und Falkenstein, Deutschland. Deutsches Unternehmen, ISO 27001, 100% Ökostrom. On-Premise: Ihre eigenen Räumlichkeiten. Kunden-Cloud: EU-Regionen bei Azure (z.B. West Europe) oder AWS (Frankfurt, Ireland).</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Sind Backups mit dabei? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Bei SaaS kümmern wir uns um regelmäßige Backups nach branchenüblichen Standards. Details besprechen wir im Security-Review. Bei On-Premise und Kunden-Cloud liegt die Backup-Verantwortung bei Ihnen. Wir beraten Sie aber bei der Einrichtung.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABSCHNITT 02: DATENSCHUTZ UND RECHT -->
+<section class="content surface" id="datenschutz-recht">
+  <div class="section-inner">
+    <div class="section-num">Abschnitt 02</div>
+    <h2 class="section-title">Datenschutz und Recht</h2>
+    <div class="divider"></div>
+
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>Ist der Engineering AI Hub wirklich DSGVO-konform? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Ja. Datenspeicherung und Verarbeitung (Inference) finden innerhalb der EU statt. Kein Transfer in Drittländer. Kein Training mit Kundendaten. Auftragsverarbeitungsvertrag (AVV) ist Teil des Vertrags. Braingineering ist ein österreichisches Unternehmen (FN 661950g, Sitz Wien). Alle Details auf unserer <a href="/datenschutz">Datenschutz-Seite</a>.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Was ist mit dem Cloud Act? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Der US CLOUD Act erlaubt US-Behörden theoretisch Zugriff auf Daten bei US-Unternehmen, auch wenn die Server in der EU stehen. Das betrifft OpenAI, Microsoft und andere US-Anbieter. Wir nutzen deren Modelle über API, speichern aber keine Kundendaten bei diesen Anbietern. Ihre Projektdaten liegen auf Hetzner (deutsch) oder Ihren eigenen Servern.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Brauche ich einen Auftragsverarbeitungsvertrag? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Ja, wenn personenbezogene Daten verarbeitet werden. Bei Projektdaten mit Kundennamen, Adressen oder Kontaktdaten ist das fast immer der Fall. Wir stellen einen AVV gem. <a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679" target="_blank">DSGVO Art. 28</a> im Rahmen des Vertrags bereit.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Was ist mit dem EU AI Act? Betrifft mich das? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer"><a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32024R1689" target="_blank">Artikel 4 des EU AI Act</a> schreibt eine organisatorische Schulungspflicht für KI-nutzende Unternehmen vor. In Kraft seit Februar 2025, Enforcement ab August 2026. Das betrifft jedes Unternehmen, das KI-Systeme einsetzt. Braingineering bietet dafür einen separaten KI-Literacy-Workshop an.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Ist Braingineering ein österreichisches Unternehmen? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Ja. Braingineering GmbH, FN 661950g, Sitz: Modecenterstraße 20/1/193, 1030 Wien. Kein US-Mutterkonzern, keine ausländische Beteiligung. Gegründet und betrieben in Österreich.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABSCHNITT 03: TECHNOLOGIE UND FUNKTIONSWEISE -->
+<section class="content light" id="technologie">
+  <div class="section-inner">
+    <div class="section-num">Abschnitt 03</div>
+    <h2 class="section-title">Technologie und Funktionsweise</h2>
+    <div class="divider"></div>
+
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>Wie findet die KI die richtige Stelle in meinen Dokumenten? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Über semantische Suche. Ihre Dokumente werden in sogenannte Vektoren umgewandelt, die die Bedeutung eines Textes als Zahlenreihe beschreiben. Wenn Sie eine Frage stellen, wird diese ebenfalls in einen Vektor umgewandelt. Das System findet dann die Textabschnitte, deren Bedeutung Ihrer Frage am nächsten kommt. Details auf unserer <a href="/technologie">Technologie-Seite</a>.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Was ist RAG? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">RAG steht für Retrieval Augmented Generation. Die KI sucht zuerst die relevantesten Stellen in Ihren Daten (Retrieval), dann generiert sie daraus eine Antwort (Generation). So antwortet das System nur auf Basis Ihrer Dokumente, nicht auf Basis von Internetwissen. Das reduziert Halluzinationen erheblich. <a href="/technologie">Mehr dazu hier</a>.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Welche KI-Modelle werden verwendet? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Aktuell GPT-4o (OpenAI) und Claude (Anthropic). Wir setzen pro Aufgabe das am besten geeignete Modell ein und aktualisieren, wenn bessere Modelle verfügbar werden. Alle Modelle laufen über API auf EU-Servern. Kein Training mit Ihren Daten.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Warum halluziniert das System weniger als ChatGPT? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">ChatGPT antwortet aus seinem Trainingskorpus. Der Engineering AI Hub antwortet nur aus Ihren Daten. Durch RAG bekommt das Modell die relevanten Originalstellen mitgeliefert und generiert seine Antwort daraus. Jede Aussage enthält einen Quellenverweis: Dokument, Seite, Abschnitt. Weniger halluzinieren heißt nicht null. Aber die Überprüfbarkeit ist eine andere.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Funktioniert das auch mit gescannten PDFs? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Ja, mit Einschränkungen. Gescannte PDFs durchlaufen zuerst eine OCR-Erkennung (Texterkennung). Die Qualität hängt von der Scan-Auflösung ab. Saubere 300-dpi-Scans funktionieren gut. Handschriftliche Notizen oder schlechte Kopien haben eine höhere Fehlerquote. Das ist ein Bereich, in dem wir weiter optimieren.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Wie lange dauert die Erst-Indexierung? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Das hängt vom Datenvolumen ab. Ein typisches Ingenieurbüro mit 5.000 bis 10.000 Dokumenten ist in wenigen Stunden durchindexiert. Neue Dokumente werden danach laufend nachindexiert. Die Indexierung läuft im Hintergrund und stört Ihren Arbeitsalltag nicht.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABSCHNITT 04: INTEGRATION UND IT -->
+<section class="content surface" id="integration-it">
+  <div class="section-inner">
+    <div class="section-num">Abschnitt 04</div>
+    <h2 class="section-title">Integration und IT</h2>
+    <div class="divider"></div>
+
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>Funktioniert das mit meinem Microsoft 365? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Ja. Der Hub greift auf SharePoint (Projektdaten), OneDrive, Outlook/Exchange (E-Mails) und optional Teams zu. Der Hub läuft nicht innerhalb von Microsoft 365, sondern verbindet sich darüber. Ihre Ordnerstruktur bleibt unverändert. Details auf der <a href="/microsoft-365-integration">M365-Integrationsseite</a>.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Ich habe keinen eigenen Server. Geht das trotzdem? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Ja. Die SaaS-Variante (Option A) braucht keinen eigenen Server. Der Hub läuft auf unserer Infrastruktur bei Hetzner in Deutschland. Sie greifen über den Browser zu. Das ist die Option, die etwa 90% unserer Kunden nutzen.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Muss ich meine Ordner umstrukturieren? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Nein. Der Hub legt eine Indexierung über Ihre bestehenden Datenquellen. SharePoint-Bibliotheken, Ordnerstrukturen, Outlook-Postfächer bleiben wie sie sind. Die Originaldaten werden nicht verändert, verschoben oder kopiert.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Was muss meine IT vorbereiten? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Bei SaaS: wenig. Wir brauchen Lesezugriff auf die relevanten SharePoint-Bibliotheken und Outlook-Postfächer. Bei On-Premise: Ihre IT stellt einen Server bereit und gewährt Netzwerkzugang. Einen Installations-Leitfaden liefern wir mit.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Wie lange dauert das Setup? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">SaaS: wenige Wochen vom Vertragsstart bis zum Go-Live, je nach Datenvolumen und Konfiguration. On-Premise: zusätzlich 1 bis 2 Wochen für Serverbereitstellung und Installation. Die reine technische Einrichtung dauert typischerweise 2 bis 3 Tage.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABSCHNITT 05: UNTERSCHIEDE ZU ANDEREN TOOLS -->
+<section class="content light" id="unterschiede">
+  <div class="section-inner">
+    <div class="section-num">Abschnitt 05</div>
+    <h2 class="section-title">Unterschiede zu anderen Tools</h2>
+    <div class="divider"></div>
+
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>Was ist der Unterschied zu ChatGPT? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">ChatGPT ist ein generischer Chatbot ohne Zugriff auf Ihre Firmendaten. Der Engineering AI Hub durchsucht Ihre eigenen Dokumente, E-Mails und Normen und liefert Antworten mit Quellenverweisen. Dazu: EU-Server, DSGVO-konform, kein Training mit Ihren Daten. ChatGPT in der Standardversion bietet nichts davon.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Macht Microsoft Copilot das nicht bald auch? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Copilot ist DSGVO-konform und in M365 integriert. Aber Copilot arbeitet innerhalb einzelner Apps (Word, Outlook, Teams). Er durchsucht nicht Ihr Projektarchiv nach Referenzprojekten, kennt keine ÖNORMEN mit Quellenverweisen, erstellt keine Protokolle per Anruf und prüft keine Leistungsverzeichnisse. Der Hub orchestriert Daten über Silos hinweg.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Wie unterscheidet sich der Hub von einem eigenen GPT? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Ein Custom GPT bei OpenAI arbeitet mit begrenztem Kontext (maximal rund 20 Dateien), läuft auf US-Servern, bietet keine Mandantentrennung und keine Quellenverweise auf Abschnittsebene. Der Hub indexiert Tausende Dokumente, läuft in der EU und liefert exakte Verweise: Dokument, Seite, Absatz.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Warum nicht einfach Perplexity oder Gemini? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Beide durchsuchen das Internet, nicht Ihre Firmendaten. Perplexity speichert Prompts ohne belastbare Datenschutz-Dokumentation. Google Gemini in der Konsumenten-Version loggt Interaktionen bis zu 72 Stunden. Keines der beiden Tools ist für den Einsatz mit vertraulichen Projektdaten geeignet.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABSCHNITT 06: BETRIEB, SUPPORT, WEITERENTWICKLUNG -->
+<section class="content surface" id="betrieb">
+  <div class="section-inner">
+    <div class="section-num">Abschnitt 06</div>
+    <h2 class="section-title">Betrieb, Support und Weiterentwicklung</h2>
+    <div class="divider"></div>
+
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>Wie werden meine Mitarbeiter geschult? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Die Einarbeitung dauert 1 bis 2 Stunden pro Person. Der Hub ist browserbasiert und funktioniert wie ein Chat. Keine neue Software, keine neuen Dateiformate. Wir führen ein Onboarding durch und stellen Anleitungen bereit. Die meisten Mitarbeiter arbeiten nach einer Woche selbstständig.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Was passiert bei einem Ausfall? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Bei SaaS überwachen wir die Systeme und reagieren auf Ausfälle. Ihre Originaldaten (SharePoint, Outlook) sind davon nie betroffen. Der Hub ist ein zusätzliches Werkzeug, kein Ersatz für Ihre bestehende Infrastruktur. Bei On-Premise liegt die Verfügbarkeit bei Ihrer IT.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Wie wird das System aktualisiert? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Bei SaaS spielen wir Updates automatisch ein: neue Modelle, Verbesserungen, Sicherheitspatches. Sie merken davon im Arbeitsalltag nichts. Bei On-Premise stimmen wir Update-Zyklen mit Ihnen ab. Keine Updates ohne Ihre Freigabe.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Was, wenn OpenAI ein neues Modell bringt? Seid ihr dann obsolet? <i class="ri-arrow-down-s-line chevron"></i></summary>
+        <div class="faq-answer">Im Gegenteil. Wir integrieren neue Modelle, sobald sie Mehrwert bieten. Der Wechsel von GPT-4 auf GPT-4o lief für unsere Kunden im Hintergrund. Der Hub ist modellunabhängig aufgebaut. Wir nutzen aktuell GPT-4o und Claude parallel. Wenn morgen ein besseres Modell erscheint, profitieren Sie automatisch davon.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABSCHNITT 07: ZUM WEITERLESEN -->
+<section class="content light">
+  <div class="section-inner">
+    <div class="section-num">Abschnitt 07</div>
+    <h2 class="section-title">Zum Weiterlesen</h2>
+    <div class="divider"></div>
+
+    <div class="link-grid">
+      <a href="/technologie" class="link-card">
+        <div class="link-icon"><i class="ri-cpu-line"></i></div>
+        <h4>Technologie</h4>
+        <p>Wie funktioniert KI-Suche in Ihren Daten? Vektoren, RAG und semantische Suche erklärt.</p>
+      </a>
+      <a href="/datenschutz" class="link-card">
+        <div class="link-icon"><i class="ri-shield-check-line"></i></div>
+        <h4>Datenschutz</h4>
+        <p>Wo laufen Ihre Daten? EU-Hosting, Subprocessors, Vertragsende. Alles im Detail.</p>
+      </a>
+      <a href="/microsoft-365-integration" class="link-card">
+        <div class="link-icon"><i class="ri-microsoft-line"></i></div>
+        <h4>Microsoft 365-Integration</h4>
+        <p>Wie der Hub auf SharePoint, Outlook und OneDrive zugreift. Ohne Ordner umzustrukturieren.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <h2>Noch Fragen? Dann reden wir.</h2>
+  <p>Im KI-Kurzcheck schauen wir uns in 20 Minuten an, wie Ihr Büro heute arbeitet und was konkret bei Ihnen möglich wäre.</p>
+  <a href="https://www.braingineering.at/kostenloser-ki-kurzcheck-fur-ingenieurburos" style="background:#FF5100;color:#FFFFFF;border:none;border-radius:8px;padding:14px 32px;font-family:'Manrope',sans-serif;font-weight:700;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;position:relative;z-index:1;">Kostenlosen KI-Kurzcheck buchen <i class="ri-arrow-right-line"></i></a>
+</div>
+
+<!-- ARTICLE META -->
+<div class="article-meta">
+  <span>Veröffentlicht: 17. April 2026</span>
+  <span>Zuletzt aktualisiert: 17. April 2026</span>
+  <span>Autor: Braingineering-Team</span>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="https://www.braingineering.at" class="footer-logo">
+        <div class="logo-badge">
+          <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.5 1L1 10.5H7L5.5 17L13 7.5H7L8.5 1Z" fill="white" stroke="white" stroke-width="0.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="logo-text">braingineering.</span>
+      </a>
+      <p>KI-Agenten für Ingenieurbüros. DSGVO-konform auf EU-Servern. Entwickelt in Wien.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Ressourcen</h5>
+      <a href="/technologie">Technologie</a>
+      <a href="/datenschutz">Datenschutz</a>
+      <a href="/sicherheit">Sicherheit</a>
+      <a href="/microsoft-365-integration">M365-Integration</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h5>Kontakt</h5>
+      <a href="mailto:office@braingineering.at"><i class="ri-mail-line" style="margin-right:6px;"></i>office@braingineering.at</a>
+      <a href="tel:+436763930094"><i class="ri-phone-line" style="margin-right:6px;"></i>+43 676 393 0094</a>
+      <a href="https://www.braingineering.at/impressum">Impressum</a>
+      <a href="https://www.braingineering.at/datenschutz">Datenschutzerklärung</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Braingineering GmbH &middot; Modecenterstraße 20/1/193, 1030 Wien &middot; FN 661950g
+  </div>
+</footer>
+
+</body>
+</html>
